@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :recipes
+  authenticate :user do
+    resources :recipes, only: [:new, :create, :edit, :update, :destroy]
+  end
+
+  resources :recipes, only: [:index, :show]
 
   get 'welcome/index'
 
