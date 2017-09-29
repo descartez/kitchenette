@@ -10,3 +10,7 @@ a Rails recipe application
     - Allow "admin" users to manage the saved and submitted recipes
   - Rspec tests
     - Show how and where tests are configured/written to ensure integrity of the application
+
+### What it's built on:
+  - Rails 5
+  - Auth with Devise
