@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipes
+
   get 'welcome/index'
 
   get 'welcome/about'
