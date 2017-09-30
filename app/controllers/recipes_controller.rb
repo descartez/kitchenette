@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [ :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.json
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
+        format.html { redirect_to :root, notice: 'Recipe was successfully submitted.' }
         format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
@@ -78,8 +78,12 @@ class RecipesController < ApplicationController
       @recipe = Recipe.find(params[:id])
     end
 
+    def set_user
+      @user = current_user
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.fetch(:recipe, {}).permit(:title, :directions)
+      params.fetch(:recipe, {user_id: current_user}).permit(:title, :ingredients, :directions)
     end
   end

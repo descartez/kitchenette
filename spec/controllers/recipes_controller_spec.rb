@@ -10,8 +10,9 @@ RSpec.describe RecipesController, type: :controller do
   end
 
   context '#recipe' do
-    xit 'should create a new recipe' do
-      post :recipes, params: {}
+    it 'should create a new recipe' do
+        recipes_path, params = { title: "wat", ingredients: "wat", directions: "wat"}
+        expect(Recipe.where(title: "wat", ingredients: "wat", directions: "wat")).to exist
     end
 
     xit 'should be able to change that recipe' do
