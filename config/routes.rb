@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   authenticate :user do
     resources :recipes, only: [:new, :create, :edit, :update, :destroy]
+
   end
 
   resources :recipes, only: [:index, :show]
