@@ -1,12 +1,16 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
-
   before_action :authenticate_user!, except: [:show, :index]
+
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.published
+    if user_signed_in? and current_user.admin?
+      @recipes = Recipe.all
+    else
+      @recipes = Recipe.published
+    end
   end
 
   # GET /recipes/1
@@ -78,4 +82,4 @@ class RecipesController < ApplicationController
     def recipe_params
       params.fetch(:recipe, {}).permit(:title, :directions)
     end
-end
+  end

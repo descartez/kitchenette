@@ -9,6 +9,10 @@ class Recipe < ApplicationRecord
     where(published: true)
   end
 
+  def self.unpublished
+    where(published: false)
+  end
+
   def publish!
     set_publish_status(true)
   end
