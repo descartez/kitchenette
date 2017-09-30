@@ -1,9 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe AdminController, type: :controller do
+  login_admin
 
-  it "should have a current_user" do
-    expect(subject.current_user).to_not eq(nil)
+  context '#login' do
+    it "should have a current_user" do
+      expect(subject.current_user).to_not eq(nil)
+    end
+
+    it 'should be an admin' do
+      expect(subject.current_user.admin).to eq(true)
+    end
   end
 
   context '#publish' do
