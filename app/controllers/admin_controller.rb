@@ -8,6 +8,7 @@ class AdminController < ApplicationController
 
   def publish
     get_recipe
+
     puts "-"*18
     puts "Publishing... #{@recipe}"
     puts "-"*18

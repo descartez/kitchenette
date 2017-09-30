@@ -1,9 +1,10 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :ingredients, dependent: :destroy
 
   validates :title, presence: true
+  validates :ingredients, presence: true
   validates :directions, presence: true
+
 
   def self.published
     where(published: true)
