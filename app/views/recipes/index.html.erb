@@ -4,6 +4,7 @@
       <ul>
         <li>
         <h2><%= recipe.title %></h2>
+        <p>submitted by: <%= recipe.user.email %></p>
         <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %></p>
         </li>
       </ul>

@@ -2,6 +2,8 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   before_action :set_user, only: [ :edit, :update, :destroy]
+  before_action :set_recipe, only: [ :edit, :update, :destroy]
+
 
   # GET /recipes
   # GET /recipes.json
@@ -20,7 +22,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipe.new
   end
 
   # GET /recipes/1/edit
@@ -31,7 +33,6 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.user_id = current_user.id
 
     respond_to do |format|
       if @recipe.save

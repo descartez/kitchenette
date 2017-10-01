@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
   post 'admin/publish/:id', to: 'admin#publish', as: 'admin_publish'
 
+
   get 'welcome/index'
 
   get 'welcome/about'

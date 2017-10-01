@@ -1,1 +1,21 @@
 <h1>ADMIN PANEL</h1>
+<h2>Published Recipes</h2>
+  <% @published_recipes.each do |recipe| %>
+      <ul>
+        <li>
+        <h2><%= recipe.title %></h2>
+        <p>submitted by: <%= recipe.user.email %></p>
+        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Unpublish', admin_publish_path(recipe) %></p>
+        </li>
+      </ul>
+<% end %>
+<h2>Unpublished Recipes</h2>
+  <% @unpublished_recipes.each do |recipe| %>
+      <ul>
+        <li>
+        <h2><%= recipe.title %></h2>
+        <p>submitted by: <%= recipe.user.email %></p>
+        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Edit', edit_recipe_path(recipe) %></p>
+        </li>
+      </ul>
+<% end %>
