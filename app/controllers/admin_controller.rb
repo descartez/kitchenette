@@ -7,7 +7,6 @@ class AdminController < ApplicationController
   end
 
   def publish
-    get_recipe
 
     puts "-"*18
     puts "Publishing... #{@recipe}"
@@ -18,16 +17,30 @@ class AdminController < ApplicationController
     puts "*"*18
     puts "Published! #{@recipe}"
     puts "*"*18
+    redirect_to "/admin"
+  end
 
-    redirect_to :index
+  def unpublish
+    get_recipe
+    p params
+    puts "-"*18
+    puts "UNPublishing... #{@recipe}"
+    puts "-"*18
+
+    @recipe.unpublish!
+
+    puts "*"*18
+    puts "UNPublished! #{@recipe}"
+    puts "*"*18
+    redirect_to "/admin"
   end
 
   private
-    def get_recipe
-      @recipe ||= Recipe.find(params[:id])
-    end
+  def get_recipe
+    @recipe ||= Recipe.find(params[:id])
+  end
 
-    def recipe_params
-      params.fetch(:recipe, {}).permit(:title, :directions)
-    end
+  def recipe_params
+    params.fetch(:recipe, {}).permit(:title, :directions)
+  end
 end

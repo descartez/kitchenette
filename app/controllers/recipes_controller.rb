@@ -8,11 +8,7 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    if user_signed_in? and current_user.admin?
-      @recipes = Recipe.all
-    else
       @recipes = Recipe.published
-    end
   end
 
   # GET /recipes/1
@@ -22,7 +18,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = current_user.recipe.new
+    @recipe = current_user.recipes.new
   end
 
   # GET /recipes/1/edit
@@ -32,7 +28,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save

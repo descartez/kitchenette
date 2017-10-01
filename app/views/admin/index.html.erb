@@ -5,7 +5,7 @@
         <li>
         <h2><%= recipe.title %></h2>
         <p>submitted by: <%= recipe.user.email %></p>
-        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Unpublish', admin_publish_path(recipe) %></p>
+        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Unpublish', admin_unpublish_path(recipe), method: :post %></p>
         </li>
       </ul>
 <% end %>
@@ -15,7 +15,7 @@
         <li>
         <h2><%= recipe.title %></h2>
         <p>submitted by: <%= recipe.user.email %></p>
-        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Edit', edit_recipe_path(recipe) %></p>
+        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Publish', admin_publish_path(recipe, publish_bool: true), method: :post %></p>
         </li>
       </ul>
 <% end %>
