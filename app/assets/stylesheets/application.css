@@ -35,8 +35,28 @@ nav {
 .recipe {
   padding: 15px;
   margin-bottom: 30px;
+  font-size: 2em
 }
 
 #new-recipe {
   margin-top: 15px;
+}
+
+#recipe-title {
+
+}
+
+#recipe-ingredients h3 {
+}
+
+#recipe-ingredients p {
+
+}
+
+#recipe-directions h3 {
+
+}
+
+#recipe-directions p {
+
 }

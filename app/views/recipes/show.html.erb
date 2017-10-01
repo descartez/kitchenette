@@ -1,5 +1,18 @@
+<div id="recipe-title">
 <h2><%= @recipe.title %></h2>
 <p>submitted by: <%= @recipe.user.email %></p>
+<p>at <%= @recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+</div>
+
+<div id="recipe-ingredients">
+<h3>Ingredients</h3>
+<p><%= @recipe.ingredients %></p>
+</div>
+
+<div id="recipe-directions">
+<h3>Directions</h3>
+<p><%= @recipe.directions %></p>
+</div>
 
 <% if user_signed_in? and current_user.admin? %>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %>

@@ -14,9 +14,5 @@ RSpec.describe RecipesController, type: :controller do
         recipes_path, params = { title: "wat", ingredients: "wat", directions: "wat"}
         expect(Recipe.where(title: "wat", ingredients: "wat", directions: "wat")).to exist
     end
-
-    xit 'should be able to change that recipe' do
-
-    end
   end
 end
