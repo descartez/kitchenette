@@ -1,13 +1,12 @@
 <h1>Recipes</h1>
 
+<div class='xs-block-grid-3'>
 <% @recipes.each do |recipe| %>
-      <ul>
-        <li>
-        <h2><%= recipe.title %></h2>
-        <p>submitted by: <%= recipe.user.email %></p>
-        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %></p>
-        </li>
-      </ul>
+    <div class="block-grid__item">
+      <h2><%= link_to recipe.title, recipe %></h2>
+      <p>submitted by: <%= recipe.user.email %>, at <%= recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+  </div>
 <% end %>
+</div>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'New Recipe', new_recipe_path, class: "button" %>

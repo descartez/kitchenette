@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   before_action :set_user, only: [ :edit, :update, :destroy]
-  before_action :set_recipe, only: [ :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
 
   # GET /recipes
@@ -81,6 +81,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.fetch(:recipe, {user_id: current_user}).permit(:title, :ingredients, :directions)
+      params.fetch(:recipe, {}).permit(:title, :ingredients, :directions)
     end
   end
