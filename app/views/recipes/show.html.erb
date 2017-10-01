@@ -6,12 +6,12 @@
 
 <div id="recipe-ingredients">
 <h3>Ingredients</h3>
-<p><%= @recipe.ingredients %></p>
+<p><%= simple_format(@recipe.ingredients) %></p>
 </div>
 
 <div id="recipe-directions">
 <h3>Directions</h3>
-<p><%= @recipe.directions %></p>
+<p><%= simple_format(@recipe.directions) %></p>
 </div>
 
 <% if user_signed_in? and current_user.admin? %>
