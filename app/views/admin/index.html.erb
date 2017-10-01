@@ -1,21 +1,25 @@
 <h1>ADMIN PANEL</h1>
-<h2>Published Recipes</h2>
+<br>
+<div class='xs-block-grid-3' id="admin-published">
+  <h2>Published Recipes</h2>
   <% @published_recipes.each do |recipe| %>
-      <ul>
-        <li>
-        <h2><%= recipe.title %></h2>
-        <p>submitted by: <%= recipe.user.email %></p>
-        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Delete', admin_delete_path(recipe), method: :delete %> <%= link_to 'Unpublish', admin_unpublish_path(recipe), method: :post %> </p>
-        </li>
-      </ul>
-<% end %>
-<h2>Unpublished Recipes</h2>
+  <div class="block-grid__item recipe card">
+    <h2><%= link_to recipe.title, recipe %></h2>
+    <p>submitted by: <%= recipe.user.email %></p>
+    <p>at <%= recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+    <p><%= link_to 'Read', recipe, class: "button button--secondary"%> <%= link_to 'Edit', edit_recipe_path(recipe), class: "button button--secondary" %> <%= link_to 'Delete', admin_delete_path(recipe), method: :delete, class: "button button--negative" %> <%= link_to 'Unpublish', admin_unpublish_path(recipe), method: :post, class: "button" %></p>
+  </div>
+  <% end %>
+</div>
+
+<div class='xs-block-grid-3 fill-gray' id="admin-unpublished">
+  <h2>Unpublished Recipes</h2>
   <% @unpublished_recipes.each do |recipe| %>
-      <ul>
-        <li>
-        <h2><%= recipe.title %></h2>
-        <p>submitted by: <%= recipe.user.email %></p>
-        <p><%= link_to 'Show', recipe %> <%= link_to 'Edit', edit_recipe_path(recipe) %> <%= link_to 'Delete', admin_delete_path(recipe), method: :delete %> <%= link_to 'Publish', admin_publish_path(recipe, publish_bool: true), method: :post %></p>
-        </li>
-      </ul>
-<% end %>
+  <div class="block-grid__item recipe card fill-gray">
+    <h2><%= link_to recipe.title, recipe %></h2>
+    <p>submitted by: <%= recipe.user.email %></p>
+    <p>at <%= recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+    <p><%= link_to 'Read', recipe, class: "button button--secondary"%> <%= link_to 'Edit', edit_recipe_path(recipe), class: "button button--secondary" %> <%= link_to 'Delete', admin_delete_path(recipe), method: :delete, class: "button button--negative" %> <%= link_to 'Publish', admin_publish_path(recipe), method: :post, class: "button" %></p>
+  </div>
+  <% end %>
+</div>

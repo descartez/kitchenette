@@ -2,11 +2,15 @@
 
 <div class='xs-block-grid-3'>
 <% @recipes.each do |recipe| %>
-    <div class="block-grid__item">
+    <div class="block-grid__item recipe card">
       <h2><%= link_to recipe.title, recipe %></h2>
-      <p>submitted by: <%= recipe.user.email %>, at <%= recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+      <p>submitted by: <%= recipe.user.email %></p>
+      <p>at <%= recipe.created_at.strftime("%H:%M, %b %d %Y") %></p>
+      <p><%= link_to 'Read', recipe, class: "button button--secondary"%></p>
   </div>
 <% end %>
 </div>
 
+<div id="new-recipe">
 <%= link_to 'New Recipe', new_recipe_path, class: "button" %>
+</div>

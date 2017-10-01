@@ -7,14 +7,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-  <nav>
-    <div class="clearfix fill-promoted-orange">
+  <nav class="fill-promoted-orange">
+    <div class="clearfix">
       <div class="xs-float-left">
-        <h1>Kitchenette</h1>
-        <%= link_to "Recipes", root_path %>
+        <h1>Kitchenette: A Recipe App</h1>
+        <%= link_to "Recipes", root_path %> /
         <% if user_signed_in? && current_user.admin? %>
-        <%= link_to "Admin", admin_index_path %>
+        <%= link_to "Admin", admin_index_path %> /
         <% end %>
+        <%= link_to "About", welcome_about_path %>
+
       </div>
       <div class="xs-float-right">
         <% if user_signed_in? %>

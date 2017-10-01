@@ -17,3 +17,26 @@
 body {
   padding: 10px;
 }
+
+nav {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+#admin-published {
+  margin: 15px;
+  padding: 15px;
+}
+
+#admin-unpublished {
+  margin: 15px;
+}
+
+.recipe {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+#new-recipe {
+  margin-top: 15px;
+}
