@@ -42,11 +42,16 @@ nav {
   margin-top: 15px;
 }
 
-#recipe-title {
+#recipe-title h2 {
+  font-size: 4em
+}
 
+#recipe-ingredients {
+  padding-bottom: 15px
 }
 
 #recipe-ingredients h3 {
+  font-size: 2em
 }
 
 #recipe-ingredients p {
@@ -54,7 +59,7 @@ nav {
 }
 
 #recipe-directions h3 {
-
+  font-size: 2em
 }
 
 #recipe-directions p {

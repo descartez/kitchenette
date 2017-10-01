@@ -13,16 +13,3 @@
 <h3>Directions</h3>
 <p><%= simple_format(@recipe.directions) %></p>
 </div>
-
-<% if user_signed_in? and current_user.admin? %>
-<%= link_to 'Edit', edit_recipe_path(@recipe) %>
-    <%= link_to 'Delete', admin_delete_path(@recipe), method: :delete %>
-    <% if @recipe.published? %>
-      <%= link_to 'Unpublish', admin_unpublish_path(@recipe), method: :post %>
-    <% else %>
-      <%= link_to 'Publish', admin_publish_path(@recipe), method: :post %>
-    <% end %>
-<% end %>
-
-
-<%= link_to 'Back', recipes_path %>
