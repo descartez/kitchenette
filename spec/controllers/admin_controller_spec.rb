@@ -17,15 +17,15 @@ RSpec.describe AdminController, type: :controller do
     it 'publishes the recipe' do
       recipe = create(:recipe)
       expect(recipe.published).to be(false)
-      admin_publish_path, params={id: recipe.id, publish_bool: true}
+      admin_publish_path, params={id: recipe.id}
       expect(recipe.published).to be(true)
     end
 
     it 'unpublishes the recipe after publishing it' do
       recipe = create(:recipe)
-      admin_publish_path, params={id: recipe.id, publish_bool: true}
+      admin_publish_path, params={id: recipe.id}
       expect(recipe.published).to be(true)
-      admin_publish_path, params={id: recipe.id, publish_bool: false}
+      admin_unpublish_path, params={id: recipe.id}
       expect(recipe.published).to be(false)
     end
   end

@@ -23,3 +23,5 @@ a Rails recipe application
 - I kept the database simple, but I would like to implement a markdown system for the next iteration. This would make the user experience/submission process more flexible. On top of that, some kind of tag system would be helpful for the user. Essentially the project would turn into a content-specific blog.
 
 - Only admins can edit: Rather than allow users to manage their submissions (which would require another dashboard and set of permissions, i.e. users can only edit their own submissions), I decided that only admins could edit/modify posts. If this were a professional-grade app, users would be able to edit their own posts, but they would be seen by the admin as a "new submission", so as to avoid confusion about the content of any given submission.
+
+-Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`.

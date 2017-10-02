@@ -23,6 +23,7 @@ RSpec.describe Recipe, type: :model do
 
     it 'should unpublish the recipe' do
       recipe = create(:recipe)
+      recipe.publish!
       recipe.unpublish!
       expect(recipe.published).to be(false)
     end
