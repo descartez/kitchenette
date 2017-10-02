@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
 
   def user_is_admin?
     if current_user.admin?
-
     else
       redirect_to :root
     end
