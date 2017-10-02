@@ -3,6 +3,7 @@ FactoryGirl.define do
     title { Faker::StarWars.character }
     ingredients "Food, Heat"
     directions "Bake, Fry, Cook"
+    published false
     user
   end
 end
