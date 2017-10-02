@@ -12,9 +12,11 @@ a Rails recipe application
     - Show how and where tests are configured/written to ensure integrity of the application
 
 ### What it's built on:
-  - Rails 5
+  - Rails 5, Ruby 2.3.1
   - Auth with Devise
   - Buzzfeed's Solid CSS for the front end
+  - FactoryGirl with Rspec for tests (all found in the spec folder, run `rails spec` to run them)
+
 
 ### Some Notes:
 
@@ -24,4 +26,4 @@ a Rails recipe application
 
 - Only admins can edit: Rather than allow users to manage their submissions (which would require another dashboard and set of permissions, i.e. users can only edit their own submissions), I decided that only admins could edit/modify posts. If this were a professional-grade app, users would be able to edit their own posts, but they would be seen by the admin as a "new submission", so as to avoid confusion about the content of any given submission.
 
--Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`.
+- Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`.
