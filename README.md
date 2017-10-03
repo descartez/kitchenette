@@ -17,6 +17,11 @@ a Rails recipe application
   - Buzzfeed's Solid CSS for the front end
   - FactoryGirl with Rspec for tests (all found in the spec folder, run `rails spec` to run them)
 
+### How to reach the Admin panel:
+  - Create a user (either by signing up manually or console command)
+  - Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`. Once you've created a user, promote them to an admin in the console.
+  - Usually the navbar will only show a `recipes` and `about` link. Once you login as an admin user, there will be a third link `admin`.
+  - You can now edit, delete, or publish submitted recipes!
 
 ### Some Notes:
 
@@ -26,4 +31,4 @@ a Rails recipe application
 
 - Only admins can edit: Rather than allow users to manage their submissions (which would require another dashboard and set of permissions, i.e. users can only edit their own submissions), I decided that only admins could edit/modify posts. If this were a professional-grade app, users would be able to edit their own posts, but they would be seen by the admin as a "new submission", so as to avoid confusion about the content of any given submission.
 
-- Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`.
+- The front end is simple, but retains the formatting of the submitted textareas in a recipe. As stated before, I would like to make the system take in markdown and translate it to HTML, allowing for a better user submission experience.
