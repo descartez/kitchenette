@@ -28,6 +28,8 @@ a Rails recipe application
 
 ### Some Notes:
 
+- You do not have to be logged in to see recipes. Only to submit, manage, and edit.
+
 - I was unsure how much testing was required to be considered adequate, so I went ahead and tested the models to make sure that they were valid and that their methods worked. My testing experience is limited, but growing, as I recognize their importance. Going TDD was a great way to keep the project on the rails.
 
 - I kept the database simple, but I would like to implement a markdown system for the next iteration. This would make the user experience/submission process more flexible. On top of that, some kind of tag system would be helpful for the user. Essentially the project would turn into a content-specific blog.
