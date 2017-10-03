@@ -20,7 +20,7 @@ a Rails recipe application
 ### How to reach the Admin panel:
   - Create a user (either by signing up manually or console command)
   - Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`. Once you've created a user, promote them to an admin in the console.
-  - Usually the navbar will only show a `recipes` and `about` link. Once you login as an admin user, there will be a third link `admin`.
+  - Usually the navbar will only show a `recipes` and `about` link. Once you login as an admin user, there will be a third link `admin`. You can also reach the admin panel by going to `/admin`
   - You can now edit, delete, or publish submitted recipes!
 
 ### Some Notes:
