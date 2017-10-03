@@ -17,6 +17,9 @@ a Rails recipe application
   - Buzzfeed's Solid CSS for the front end
   - FactoryGirl with Rspec for tests (all found in the spec folder, run `rails spec` to run them)
 
+### Seeding the database:
+  You can seed the database (including an admin user) by running `rails db:seed`.
+
 ### How to reach the Admin panel:
   - Create a user (either by signing up manually or console command)
   - Admins are promoted from users using User model methods `make_admin!` and `remove_admin!`. Once you've created a user, promote them to an admin in the console.
